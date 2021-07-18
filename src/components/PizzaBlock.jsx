@@ -70,4 +70,10 @@ function PizzaBlock({ id, name, imageUrl, price, types, sizes }) {
     )
 }
 
+
+PizzaBlock.defaultProps = {
+    name: "---",
+    price: 0
+}
+
 export default PizzaBlock;
