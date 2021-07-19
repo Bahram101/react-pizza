@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import LoadingBlock from './LoadingBlock';
 
 
 function PizzaBlock({ name, imageUrl, price, types, sizes }) {
@@ -19,6 +20,7 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
         setActiveSize(index)
     }
 
+    
 
     return (
 
@@ -70,10 +72,5 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
     )
 }
 
-
-PizzaBlock.defaultProps = {
-    name: "---",
-    price: 0
-}
 
 export default PizzaBlock;

@@ -1,5 +1,5 @@
 const initialState = {
-    category: 0,
+    category: 2,
     sortBy: 'popular'
 }
 
