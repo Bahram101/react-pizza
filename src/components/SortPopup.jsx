@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 
 
 
-function SortPopup({items}) {
+const SortPopup = React.memo(function SortPopup({ items }) {
 
     const [visiblePopup, setVisiblePopup] = useState(false)
     const [activeItem, setActiveItem] = useState(0)
@@ -23,15 +23,15 @@ function SortPopup({items}) {
         document.body.addEventListener('click', handleOutsideClick)
     }, [])
 
-   
-    const onClickItem = (index) =>{
+
+    const onClickItem = (index) => {
         setActiveItem(index)
         setVisiblePopup(false)
     }
 
 
     return (
-        
+
         <div ref={sortRef} className="sort">
             <div className="sort__label">
                 <svg className={visiblePopup ? 'rotated' : ""} width="10" height="6" viewBox="0 0 10 6" fill="none"
@@ -46,14 +46,14 @@ function SortPopup({items}) {
             {visiblePopup && <div className='sort__popup' >
                 <ul>
                     {items.map((obj, index) => (
-                        <li className={activeItem === index ? 'active' : ''} 
-                            key={obj.type} 
+                        <li className={activeItem === index ? 'active' : ''}
+                            key={obj.type}
                             onClick={() => onClickItem(index)}>{obj.name}
                         </li>
                     ))}
                 </ul>
-            </div> }
+            </div>}
         </div>
     )
-}
+})
 export default SortPopup

@@ -5,7 +5,6 @@ function Cart() {
         <div className="container">
             <h2>Cart</h2>
         </div>
-
     )
 }
 

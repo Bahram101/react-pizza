@@ -1,15 +1,14 @@
 import React from 'react'
 import { useState } from "react";
-
-function Categories({ items }) {
+ 
+const Categories =  React.memo(function ({ items, onClickItem }) {
 
     const [activeItem, setActiveItem] = useState(null)
 
-    const onClickItem = index => {
+    const onSelectItem = index => {
         setActiveItem(index)
+        onClickItem(index)
     }
-
-    // console.log('cat updated');
 
     return (
         <div className="categories">
@@ -20,12 +19,12 @@ function Categories({ items }) {
                 {items.map((item, index) => (
                     <li className={activeItem === index ? 'active' : ''}
                         key={index}
-                        onClick={() => onClickItem(index)}>{item}
+                        onClick={() => onSelectItem(index)}>{item}
                     </li>
                 ))}
             </ul>
         </div>
     )
-}
+})
 
 export default Categories

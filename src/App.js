@@ -1,6 +1,6 @@
 import React from "react";
 import axios from 'axios';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Header } from "./components";
 import { Home, Cart } from "./pages";
 import { Route } from 'react-router-dom';
@@ -19,20 +19,12 @@ function App() {
 	}, [])
 		
 
-	const { items } = useSelector(({pizzas, filters}) => {
-		return {
-			items: pizzas.items,
-			sortBy: filters.sortBy
-		}
-	})
-
-
 	return (
 
 		<div className="wrapper">
 			<Header />
 			<div className="content">
-				<Route exact path="/" render={() => <Home items={items} />} />
+				<Route exact path="/" component={Home} />
 				<Route exact path="/cart" component={Cart} />
 			</div>
 		</div>
