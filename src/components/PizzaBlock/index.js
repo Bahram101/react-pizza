@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
-import LoadingBlock from './LoadingBlock';
 import Button from '../Button';
 
 
